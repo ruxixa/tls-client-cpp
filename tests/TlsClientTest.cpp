@@ -29,13 +29,6 @@ protected:
     Session* session;
 };
 
-// Function to list contents of a directory
-void listDirectoryContents(const std::string& path) {
-    for (const auto& entry : std::filesystem::directory_iterator(path)) {
-        std::cout << entry.path() << std::endl;
-    }
-}
-
 // Test request methods
 TEST_F(TlsClientTest, TestGETRequest) {
     requestData.url += "/get";
@@ -156,10 +149,6 @@ TEST_F(TlsClientTest, TestRequestProxy) {
 // used it in every test
 
 int main(int argc, char** argv) {
-    // List directory contents before running tests
-    std::cout << "Listing directory contents before running tests:" << std::endl;
-    listDirectoryContents(".");
-
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
