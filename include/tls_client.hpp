@@ -44,10 +44,9 @@
 //
 // Check if the C++ standard is higher than 17 
 //
-#if (!(defined(_MSVC_LANG) && _MSVC_LANG >= 201703L) || __cplusplus <= 201703L)
+#if !((defined(_MSVC_LANG) && _MSVC_LANG >= 201703L) || (!defined(_MSVC_LANG) && __cplusplus >= 201703L))
     #error "Unsupported C++ standard (use 17 or higher)"
 #endif
-
 
  /**
   * @brief LOAD_LIBRARY macro
