@@ -1,0 +1,11 @@
+# Ignore build directories
+build/
+out/
+
+# Ignore vs/vs code firectories
+.vs/
+.vscode/
+
+# Ignore dependencies folder
+libs/
+dependencies/
