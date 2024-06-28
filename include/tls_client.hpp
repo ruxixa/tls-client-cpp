@@ -44,13 +44,10 @@
 //
 // Check if the C++ standard is higher than 17 
 //
-#if __cplusplus == 201703L
-    #pragma message("__cplusplus: 201703L (C++17)")
-#elif __cplusplus == 202002L
-    #pragma message("__cplusplus: 202002L (C++20)")
-#else
-    #pragma error("Unsupported C++ standard detected")
+#if (!(defined(_MSVC_LANG) && _MSVC_LANG >= 201703L) || __cplusplus <= 201703L)
+    #error "Unsupported C++ standard (use 17 or higher)"
 #endif
+
 
  /**
   * @brief LOAD_LIBRARY macro
